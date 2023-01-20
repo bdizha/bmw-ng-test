@@ -1,0 +1,38 @@
+<div class="container mt-5" *ngIf="feature">
+  <div class="container mt-5" *ngIf="feature | async as feature">
+    <div class="row align-items-center feature-header mb-5 text-center text-md-left">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>{{ feature.properties.title }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <legend id="personal-details" class="col-form-label">
+          <label for="residential-address">Feature properties</label>
+          <h3 class="mb-3 mt-3">Feature collection</h3>
+          <table class="table table-bordered table-condensed table-striped">
+            <tbody>
+            <tr *ngFor="let property of getProperties(feature)">
+              <td class="table-label">{{ property.key }}</td>
+              <td class="table-value">{{ property.value }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </legend>
+      </div>
+      <div class="col-sm-12">
+        <legend id="residential-address" class="col-form-label">
+          <label for="residential-address">Geometry</label>
+          <div class="row">
+            <div class="col-sm-10">
+              {{ feature.geometry.coordinates }}
+            </div>
+          </div>
+        </legend>
+      </div>
+    </div>
+  </div>
+
+</div>

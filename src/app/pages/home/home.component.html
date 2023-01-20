@@ -1,0 +1,23 @@
+<div>
+  <h3 class="mb-3 mt-3">Feature collection</h3>
+  <table class="table table-bordered table-condensed table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Type</th>
+      <th>Properties</th>
+      <th>Geometry</th>
+      <th>Id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let feature of features!">
+      <td>{{feature.type}}</td>
+      <td>{{feature.properties.title }}</td>
+      <td>{{feature.geometry.coordinates }}</td>
+      <td>
+        <a routerLink="/feature/{{ feature.id }}">View</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
